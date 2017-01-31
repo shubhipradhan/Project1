@@ -93,6 +93,16 @@
 		</td>
 	</tr>
 	
+	<tr>
+		<td>
+			<form:label path="image">
+				<spring:message text="Image"/>
+			</form:label>
+		</td>
+		<td>
+			<form:input type="file" path="image" />
+		</td>
+	</tr>
 	
 	
 	<tr>

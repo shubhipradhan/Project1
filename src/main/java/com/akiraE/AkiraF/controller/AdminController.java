@@ -1,5 +1,10 @@
 package com.akiraE.AkiraF.controller;
 
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
@@ -11,11 +16,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.akiraE.AkiraB.dao.ProductDAO;
 import com.akiraE.AkiraB.dao.UserDAO;
 import com.akiraE.AkiraB.model.Product;
 import com.akiraE.AkiraB.model.User;
+import com.google.gson.Gson;
 
 
 
@@ -42,6 +49,10 @@ public class AdminController {
 	public String addProduct(@Valid @ModelAttribute("product") Product product, BindingResult result,
 			HttpServletRequest request) {
 
+		
+		
+		
+		
 		if (result.hasErrors()) {
 			return "AdminProduct";
 		} else {
@@ -64,8 +75,16 @@ public class AdminController {
 		return "redirect:/AdminProduct";
 		
 	}
-	
-	@RequestMapping(value = "/view/{category}")
+	@RequestMapping(value="/view/{category}")
+	public ModelAndView ProductCategory(@PathVariable("category") String category){
+		
+		List<Product> products=productDAO.getProductByCategory(category);
+		String productList=new Gson().toJson(products);
+		ModelAndView model=new ModelAndView("AdminCategory");
+		model.addObject("productList", productList);
+		return model;
+	}
+	/*@RequestMapping(value = "/view/{category}")
 	public String listProductsCategory(Model model,@PathVariable("category") String category) {
 		//model.addAttribute("product", new Product());
 		System.out.println("inside controller");
@@ -75,7 +94,7 @@ public class AdminController {
 		
 		return "AdminCategory";
 	}
-	
+	*/
 	/*@RequestMapping("/view/{category}")
 	public String categoryProduct(@PathVariable("category") String category) {
 		

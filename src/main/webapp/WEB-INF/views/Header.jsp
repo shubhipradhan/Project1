@@ -50,7 +50,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Products <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="/view/Tops">Tops</a></li>
+            <li><a href="view/Tops">Tops</a></li>
             <li><a href="Rings">Rings</a></li>
             <li><a href="Necklace">Necklace</a></li>
             <li role="separator" class="divider"></li>
