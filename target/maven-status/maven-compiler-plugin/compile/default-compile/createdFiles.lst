@@ -1,0 +1,8 @@
+com\akiraE\AkiraB\model\Product.class
+com\akiraE\AkiraB\dao\UserDAO.class
+com\akiraE\AkiraB\daoimpl\UserDAOImpl.class
+com\akiraE\AkiraB\model\User.class
+com\akiraE\AkiraB\App.class
+com\akiraE\AkiraB\config\AppContextConfig.class
+com\akiraE\AkiraB\dao\ProductDAO.class
+com\akiraE\AkiraB\daoimpl\ProductDAOImpl.class
