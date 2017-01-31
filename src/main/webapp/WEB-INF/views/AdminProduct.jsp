@@ -28,7 +28,7 @@
 
 
 
-<form:form action="${addAction}" commandName="product" >
+<form:form action="${addAction}" commandName="product"  enctype="multipart/form-data">
 <table  class="table table-hover">
 	<c:if test="${!empty product.productName}">
 	<tr>
@@ -97,7 +97,17 @@
 		</td>
 	</tr>
 	
-	
+	<tr>
+		<td>
+			<form:label path="image">
+				<spring:message text="Image"/>
+			</form:label>
+		</td>
+		<td>
+			<form:input type="file" path="image" />
+			
+		</td>
+	</tr>
 	
 	
 	<tr>

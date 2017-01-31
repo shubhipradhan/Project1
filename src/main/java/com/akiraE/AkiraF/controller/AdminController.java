@@ -30,7 +30,7 @@ import com.google.gson.Gson;
 public class AdminController {
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////
-	//////////////////// PRODUCT CONTROLLER ////////////////////////
+	////////////////////////////////////////// PRODUCT CONTROLLER ///////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	@Autowired
@@ -50,7 +50,27 @@ public class AdminController {
 			HttpServletRequest request) {
 
 		
+        byte[] bytes;
 		
+		if (!product.getImage().isEmpty()) {
+
+			try {
+				
+				bytes = product.getImage().getBytes();
+				productDAO.addProduct(product);
+				System.out.println("Data Inserted");
+				String path = request.getSession().getServletContext().getRealPath("/static/images/" + product.getProductId() + ".jpg");
+				System.out.println("Path = " + path);
+				System.out.println("File name = " + product.getImage().getOriginalFilename());
+				File f = new File(path);
+				BufferedOutputStream bs = new BufferedOutputStream(new FileOutputStream(f));
+				bs.write(bytes);
+				bs.close();
+				System.out.println("Image uploaded");
+			} catch (Exception ex) {
+				System.out.println(ex.getMessage());
+			}
+		}
 		
 		
 		if (result.hasErrors()) {

@@ -12,6 +12,10 @@
 		.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;}
 		.tg .tg-4eph{background-color:#f9f9f9}
 	</style>
+	
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -24,8 +28,8 @@
 
 
 
-<form:form action="${addAction}" commandName="product" >
-<table>
+<form:form action="${addAction}" commandName="product"  enctype="multipart/form-data">
+<table  class="table table-hover">
 	<c:if test="${!empty product.productName}">
 	<tr>
 		<td>
@@ -101,6 +105,7 @@
 		</td>
 		<td>
 			<form:input type="file" path="image" />
+			
 		</td>
 	</tr>
 	
@@ -122,8 +127,8 @@
 <br>
 <h3>Products List</h3>
 <c:if test="${!empty listProducts}">
-	<table class="tg">
-	<tr>
+	<table class="table table-hover">
+	<tr class="info">
 		<th width="80">Product ID</th>
 		<th width="120">Product Name</th>
 		<th width="120">Product Brand</th>
@@ -134,7 +139,7 @@
 		<th width="60">Delete</th>
 	</tr>
 	<c:forEach items="${listProducts}" var="product">
-		<tr>
+		<tr class="success">
 			<td>${product.productId}</td>
 			<td>${product.productName}</td>
 			<td>${product.brand}</td>

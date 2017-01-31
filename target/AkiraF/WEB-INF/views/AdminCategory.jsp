@@ -22,6 +22,7 @@
 <br>
 <br>
 <center><h2>List of Products </h2></center>
+
 <br>
 <br>
 
@@ -66,9 +67,7 @@ angular.module("productApp",[])
           <td>{{product.desc}}</td>
         <td>{{product.price}}</td>
        
-<%--         <td><a class="btn btn-primary" href="<c:url value='/productInfo/{{product.productId}}' />">Info</a></td>
- --%>  
-<%--  <td><a class="btn btn-primary" href="<c:url value='/AddtoCart/{{product.productId}}' />">Cart</a></td> --%>
+
   <td><a class="btn btn-primary" href="<c:url value='/productInfo/{{product.productId}}' />">Info</a></td>
       </tr>
 	  
