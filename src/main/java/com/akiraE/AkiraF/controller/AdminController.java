@@ -104,6 +104,22 @@ public class AdminController {
 		model.addObject("productList", productList);
 		return model;
 	}
+	
+	@RequestMapping(value="/view/ProductDetails")
+	public String productDetails(Model model){
+		
+		model.addAttribute("listProducts", productDAO.listProducts());
+		return "ProductDetails";
+	}
+	
+	@RequestMapping(value="/view/ProductInfo/{productId}")
+	public String productInfo(@PathVariable("productId") int productId,Model model){
+		
+		Product product = productDAO.getProductById(productId);
+		model.addAttribute("product", product);
+		return "ProductInfo";
+		
+	}
 	/*@RequestMapping(value = "/view/{category}")
 	public String listProductsCategory(Model model,@PathVariable("category") String category) {
 		//model.addAttribute("product", new Product());

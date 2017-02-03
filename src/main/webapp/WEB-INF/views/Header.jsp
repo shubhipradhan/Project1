@@ -56,7 +56,7 @@
             <li role="separator" class="divider"></li>
             <li><a href="Solitaire">Solitaire</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">All Products</a></li>
+            <li><a href="view/ProductDetails">All Products</a></li>
           </ul>
         </li>
       </ul>
