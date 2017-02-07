@@ -40,4 +40,9 @@ public class AkiraController {
 	{
 		return "accessDenied";
 	}
+	
+	 @RequestMapping("/logout")
+	 public String logout(){
+   	 return "homePage";
+     }
 }

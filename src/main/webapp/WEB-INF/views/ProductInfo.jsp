@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
   
     <%@ taglib prefix="s" uri="http://www.springframework.org/tags" %>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page session="false"%>
 <%@ page isELIgnored="false" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -41,6 +42,7 @@
 <body>
 <div class="col-xs-6 floating-box">
 <img src="<s:url value="/static/img/s113.jpg" />" />
+<img src="<c:url value='/static/images/${product.productId}.jpg' />" class="img-responsive" alt="Picture"  />
 </div>
 <div class="col-xs-6 floating-box" >
 <%-- ${product} --%>
@@ -58,7 +60,7 @@
 
 		<h2>Product Price</h2>
 		<h3>${product.price}</h3>
-<a class="btn btn-primary" href="#">Checkout</a>
+<a class="btn btn-primary" href="/AddToCart/${product.productId}">AddToCart</a>
 </div>
 </body>
 </html>
