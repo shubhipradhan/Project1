@@ -42,6 +42,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		*/
 		http.authorizeRequests()
 		.antMatchers("/","/homePage").permitAll()
+		.antMatchers("/Cart**").access("hasAnyRole('ADMIN','USER')")
 		.antMatchers("/AddToCart/**").access("hasAnyRole('ADMIN','USER')")
 		.antMatchers("/admin/**").access("hasRole('ADMIN')")
 		.and().formLogin().loginPage("/login")

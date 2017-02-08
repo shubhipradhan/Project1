@@ -37,9 +37,7 @@
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <!-- USER DEFINE CSS -->
-<link rel="stlesheet" href="static/css/media.css">
-<link rel="stylesheet" href="static/css/Navbar.css" />
-<link rel="stylesheet" href="static/css/thumbnail.css" />
+
 
 <!-- Custom Styling -->
 <!-- Bootstrap -->

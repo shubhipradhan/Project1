@@ -1,14 +1,12 @@
+
 <!DOCTYPE html>
 <html >
 <head>
   <meta charset="UTF-8">
   <title>Akira | Login</title>
   
-  
-  
       <link rel="stylesheet" href="static/css/style.css">
 
-  
 </head>
 
 <body>

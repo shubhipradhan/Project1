@@ -60,7 +60,7 @@
 
 		<h2>Product Price</h2>
 		<h3>${product.price}</h3>
-<a class="btn btn-primary" href="/AddToCart/${product.productId}">AddToCart</a>
+<a class="btn btn-primary" href="<c:url value='/AddToCart/${product.productId}' />">AddToCart</a>
 </div>
 </body>
 </html>
