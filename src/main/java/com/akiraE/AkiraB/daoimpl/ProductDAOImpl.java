@@ -56,6 +56,16 @@ public class ProductDAOImpl implements ProductDAO{
 		return products;
 		
 	}
+	
+	public List<Product> getProductByCategory(String category) {
+		System.out.println(" category : "+category);
+		Session session=sessionFactory.getCurrentSession();
+		List<Product> products=session.createQuery("from Product WHERE category='"+category+"'").getResultList();
+		System.out.println("in productdao : "+products+" category : "+category);
+		return products;
+		//return null;
+	}
+
 
 	public void deleteProduct(int productId) {
 		Session session=sessionFactory.getCurrentSession();
@@ -65,14 +75,7 @@ public class ProductDAOImpl implements ProductDAO{
 	}
 
 	
-	public List<Product> getProductByCategory(String category) {
-		
-		Session session=sessionFactory.getCurrentSession();
-		List<Product> listproducts=session.createQuery("from Product where category="+category).getResultList();
-		System.out.println("in productdao : "+listproducts);
-		return listproducts;
-	}
-
+	
 	
 	/*public List<Product> getProductByCategory(String category) {
 		Session session=sessionFactory.getCurrentSession();

@@ -43,7 +43,17 @@ public class User {
 	private String mobile;
 
 
-	
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="cartId")
+	private Cart cart;
+
+	public Cart getCart() {
+		return cart;
+	}
+
+	public void setCart(Cart cart) {
+		this.cart = cart;
+	}
 
 	public int getUserId() {
 		return userId;

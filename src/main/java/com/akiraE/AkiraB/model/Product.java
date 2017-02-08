@@ -10,13 +10,13 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
+import javax.persistence.Transient;
 
 import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
 
 
 @Entity
-@Component
 @Table(name="PRODUCT")
 public class Product {
 	
@@ -43,14 +43,9 @@ public class Product {
 	@Column(name="category")
 	private String category;
 	
-	/*//@Column(name="category")
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "category")
-	private Category category;*/
 	
-	
-	//@Transient
-	//private MultipartFile image;
+	@Transient
+	private MultipartFile image;
 	
 	//Getters and Setters
 	
@@ -101,6 +96,18 @@ public class Product {
 	public void setPrice(double price) {
 		this.price = price;
 	}
+
+
+	public MultipartFile getImage() {
+		return image;
+	}
+
+
+	public void setImage(MultipartFile image) {
+		this.image = image;
+	}
+
+
 	
 	
 	

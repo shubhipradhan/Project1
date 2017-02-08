@@ -1,8 +1,14 @@
-com\akiraE\AkiraB\model\Product.class
 com\akiraE\AkiraB\dao\UserDAO.class
 com\akiraE\AkiraB\daoimpl\UserDAOImpl.class
-com\akiraE\AkiraB\model\User.class
-com\akiraE\AkiraB\App.class
+com\akiraE\AkiraB\model\Item.class
+com\akiraE\AkiraB\dao\ItemDAO.class
 com\akiraE\AkiraB\config\AppContextConfig.class
 com\akiraE\AkiraB\dao\ProductDAO.class
+com\akiraE\AkiraB\daoimpl\CartDAOImpl.class
+com\akiraE\AkiraB\model\Cart.class
+com\akiraE\AkiraB\model\Product.class
+com\akiraE\AkiraB\daoimpl\ItemDAOImpl.class
+com\akiraE\AkiraB\model\User.class
+com\akiraE\AkiraB\App.class
+com\akiraE\AkiraB\dao\CartDAO.class
 com\akiraE\AkiraB\daoimpl\ProductDAOImpl.class

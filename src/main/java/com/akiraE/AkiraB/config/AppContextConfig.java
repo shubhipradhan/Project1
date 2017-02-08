@@ -24,8 +24,9 @@ public class AppContextConfig {
 	{
 		BasicDataSource dataSource=new BasicDataSource();
 		dataSource.setDriverClassName("org.h2.Driver");
-		dataSource.setUrl("jdbc:h2:~/AkiraE1");
-		//dataSource.setUrl("jdbc:h2:tcp://localhost/~/AkiraE");
+		//dataSource.setUrl("jdbc:h2:~/AkiraE1");
+		//dataSource.setUrl("jdbc:h2:tcp://localhost/~/AkiraE1");
+		dataSource.setUrl("jdbc:h2:tcp://localhost/~/AkiraE");
 		dataSource.setUsername("sa");
 		dataSource.setPassword("");
 		

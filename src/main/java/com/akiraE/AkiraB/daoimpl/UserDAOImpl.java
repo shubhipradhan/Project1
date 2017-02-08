@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.akiraE.AkiraB.dao.UserDAO;
+import com.akiraE.AkiraB.model.Cart;
 import com.akiraE.AkiraB.model.User;
 
 
@@ -22,10 +23,17 @@ public class UserDAOImpl implements UserDAO{
 
 	@Autowired
 	SessionFactory sessionFactory;
+	
+	
 	public void addUser(User user) {
 		
 		Session session=sessionFactory.getCurrentSession();
+        
 		
+		Cart cart = new Cart();
+		
+		cart.setUser(user);
+		user.setCart(cart);
 		user.setEnabled(true);
 		user.setRole("ROLE_USER");
 		
@@ -61,7 +69,7 @@ public class UserDAOImpl implements UserDAO{
 
 	public User getUserByUsername(String username) {
 		Session session=sessionFactory.getCurrentSession();
-		User user=(User)session.createQuery("from User where username="+username).getSingleResult();
+		User user=(User)session.createQuery("from User where username='"+username+"'").getSingleResult();
 		return user;
 	}
 
