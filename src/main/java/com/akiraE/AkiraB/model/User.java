@@ -1,6 +1,8 @@
 package com.akiraE.AkiraB.model;
 
 
+import java.io.Serializable;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -18,10 +20,12 @@ import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Table(name="USER")
 @Entity
 @Component
-public class User {
+public class User implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -45,7 +49,13 @@ public class User {
 
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="cartId")
+	@JsonIgnore
 	private Cart cart;
+	
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="shippingAddressId")
+	public ShippingAddress shippingAddress;
+	
 
 	public Cart getCart() {
 		return cart;
@@ -110,7 +120,17 @@ public class User {
 	public void setMobile(String mobile) {
 		this.mobile = mobile;
 	}
-	
+
+	public ShippingAddress getShippingAddress() {
+		return shippingAddress;
+	}
+
+	public void setShippingAddress(ShippingAddress shippingAddress) {
+		this.shippingAddress = shippingAddress;
+	}
+
 	
 
+	
+	
 }

@@ -22,6 +22,12 @@ public class ItemDAOImpl implements ItemDAO{
 	@Autowired
 	SessionFactory sessionFactory;
 
+	public ItemDAOImpl(){
+		
+		System.out.println("ITEM DAO IMPL");
+		
+	}
+	
 	public void addItem(Item item) {
 		Session session=sessionFactory.getCurrentSession();
 		session.saveOrUpdate(item);

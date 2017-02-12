@@ -1,5 +1,8 @@
 package com.akiraE.AkiraB.model;
 
+import java.io.Serializable;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -7,9 +10,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import org.springframework.stereotype.Component;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
-public class Item {
+@Component
+@Table(name="ITEM")
+public class Item implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -17,10 +28,13 @@ public class Item {
 	
 	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="productId")
+	
 	private Product product;
 	
-	@ManyToOne(fetch=FetchType.EAGER)
+	@ManyToOne(fetch=FetchType.EAGER,cascade=CascadeType.ALL)
+	//@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="cartId")
+	@JsonBackReference
 	private Cart cart;
 	
 	
@@ -67,7 +81,14 @@ public class Item {
 	public void setItemTotal(double itemTotal) {
 		this.itemTotal = itemTotal;
 	}
+
+	/*@Override
+	public String toString() {
+		return "Item [itemId=" + itemId + ", product=" + product + ", cart=" + cart + ", qty=" + qty + ", itemTotal="
+				+ itemTotal + "]";
+	}
+*/
 	
 	
-	
+		
 }

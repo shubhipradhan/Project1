@@ -18,6 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 @Table(name="PRODUCT")
+@Component
 public class Product {
 	
 	
@@ -109,7 +110,6 @@ public class Product {
 
 
 	
-	
-	
 
+	
 }

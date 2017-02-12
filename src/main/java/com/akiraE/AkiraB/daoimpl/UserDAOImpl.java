@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.akiraE.AkiraB.dao.UserDAO;
 import com.akiraE.AkiraB.model.Cart;
+import com.akiraE.AkiraB.model.ShippingAddress;
 import com.akiraE.AkiraB.model.User;
 
 
@@ -24,7 +25,9 @@ public class UserDAOImpl implements UserDAO{
 	@Autowired
 	SessionFactory sessionFactory;
 	
-	
+	public UserDAOImpl(){
+		System.out.println("USER DAO IMPL");
+	}
 	public void addUser(User user) {
 		
 		Session session=sessionFactory.getCurrentSession();
@@ -37,6 +40,9 @@ public class UserDAOImpl implements UserDAO{
 		user.setEnabled(true);
 		user.setRole("ROLE_USER");
 		
+		ShippingAddress address= new ShippingAddress();
+	    address.setUser(user);
+        user.setShippingAddress(address);
 		
 		session.saveOrUpdate(user);
 		

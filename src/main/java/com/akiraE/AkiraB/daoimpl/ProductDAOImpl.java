@@ -14,10 +14,6 @@ import com.akiraE.AkiraB.dao.ProductDAO;
 import com.akiraE.AkiraB.model.Product;
 
 
-
-
-
-
 @Repository("productDAO")
 @Transactional
 @EnableTransactionManagement
@@ -26,7 +22,10 @@ public class ProductDAOImpl implements ProductDAO{
 	@Autowired
 	SessionFactory sessionFactory;
 	
-	
+	public ProductDAOImpl(){
+		
+		System.out.println("PRODUCT DAO IMPL");
+	}
 	public void addProduct(Product product) {
 		Session session=sessionFactory.getCurrentSession();
 		session.persist(product);

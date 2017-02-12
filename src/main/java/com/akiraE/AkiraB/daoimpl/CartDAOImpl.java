@@ -18,13 +18,16 @@ public class CartDAOImpl implements CartDAO{
 
 	@Autowired
 	SessionFactory sessionFactory;
-	@Autowired
-	User user;
 	
+	
+	public CartDAOImpl(){
+		
+		System.out.println("CART DAO IMPL working");
+		
+	}
 	public void addCart(Cart cart) {
 		Session session=sessionFactory.getCurrentSession();
-		
-	    //cart.setUser(user);
+
 	    
 		session.persist(cart);
 		
@@ -32,7 +35,7 @@ public class CartDAOImpl implements CartDAO{
 
 	public void updateCart(Cart cart) {
 		Session session=sessionFactory.getCurrentSession();
-		session.update(cart);
+		session.saveOrUpdate(cart);
 		
 	}
 
