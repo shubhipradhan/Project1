@@ -25,47 +25,23 @@
 <br>
 <br>
   <!-- ######################################################################################  -->
-    <h3>Order Summary List</h3>
-<c:if test="${!empty order.cart.items}">
-	<table class="table table-hover table-striped">
-	<tr class="success">
-		
-		<th width="60">Product Name</th>
-		<th width="60">Product Brand</th>
-		<th width="60">Product Category</th>
-		<th width="60">Product Description</th>
-		<th width="60">Product Price</th>
-		<th width="60">Item Quantity</th>
-		<th width="60">Item Total</th>
-		
-		
-	</tr>
-	<c:forEach items="${order.cart.items}" var="product">
-		<tr class="warning">
-		
-			<td>${product.product.productName}</td>
-			<td>${product.product.brand}</td>
-			<td>${product.product.category}</td>
-			<td>${product.product.desc}</td>
-			<td>${product.product.price}</td>
-			<td>${product.qty}</td>
-			<td>${product.qty *product.product.price}</td>
-			
-			
-
-		</tr>
-	</c:forEach>
-	</table>
-</c:if>
-      <form:form class="form-horizontal">
-      <input type="hidden" name="_flowExecutionKey">
-      <br>
-     
-      <hr>
-      <input type="submit" value="Submit Order" class="btn btn-large btn-success" name="_eventId_orderConfirmed" />
-     </form:form>
-    
-
+ 
+	  <tr ng-repeat="item in cart.items">
+        <td>{{item.product.productName}}</td>
+        <td>{{item.product.brand}}</td>
+        <td>{{item.product.price}}</td>
+        <td>{{item.quantity}}</td>
+        <td>{{item.itemTotal}}</td>
+      </tr>
+      
+      <tr>
+          <td></td>
+          <td></td>
+          <td>Total:</td>
+          <td>{{GrandTotalOfItems()}}</td>
+          
+      </tr>
+	  
 
 </body>
 
