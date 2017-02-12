@@ -1,7 +1,9 @@
+com\akiraE\AkiraF\controller\RestCartController.class
 com\akiraE\AkiraF\security\SecurityWebAppInitializer.class
 com\akiraE\AkiraF\security\SecurityConfig.class
 com\akiraE\AkiraF\config\WebAppInitializer.class
 com\akiraE\AkiraF\config\WebConfig.class
 com\akiraE\AkiraF\controller\AkiraController.class
+com\akiraE\AkiraF\flow\WebflowConfig.class
 com\akiraE\AkiraF\controller\AdminController.class
 com\akiraE\AkiraF\controller\CartController.class

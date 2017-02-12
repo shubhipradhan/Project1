@@ -37,7 +37,7 @@
 
 <!-- Custom Styling -->
 <!-- Bootstrap -->
-<link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 <div class="col-xs-6 floating-box">

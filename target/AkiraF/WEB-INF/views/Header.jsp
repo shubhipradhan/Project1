@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -15,13 +16,9 @@
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-	crossorigin="anonymous">
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-	crossorigin="anonymous">
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
 
 
 </head>
@@ -45,18 +42,18 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="homePage">Home<span class="sr-only">(current)</span></a></li>
-        <li><a href="about">About</a></li>
+        <li class="active"><a href="<c:url value='homePage' />">Home<span class="sr-only">(current)</span></a></li>
+        <li><a href="<c:url value='about' />">About</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Products <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="view/Tops">Tops</a></li>
-            <li><a href="view/Rings">Rings</a></li>
-            <li><a href="view/Necklace">Necklace</a></li>
+            <li><a href="<c:url value='view/Tops' />">Tops</a></li>
+            <li><a href="<c:url value='view/Rings' />">Rings</a></li>
+            <li><a href="<c:url value='view/Necklace' />">Necklace</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="Solitaire">Solitaire</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="view/ProductDetails">All Products</a></li>
+            <li><a href="<c:url value='view/ProductDetails' />">All Products</a></li>
           </ul>
         </li>
       </ul>

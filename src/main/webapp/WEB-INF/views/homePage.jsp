@@ -1,5 +1,5 @@
 
-
+ <%@ taglib prefix="s" uri="http://www.springframework.org/tags" %>
 <html>
 <head>
 <meta charset="utf-8">
@@ -9,13 +9,9 @@
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-	crossorigin="anonymous">
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-	crossorigin="anonymous">
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
 
 <!-- jQuery library -->
 <script
@@ -23,9 +19,7 @@
 
 <!-- Latest compiled JavaScript -->
 <script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-	crossorigin="anonymous"></script>
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <!-- FontAwesome CDN -->
 <link rel="stylesheet"
@@ -49,7 +43,81 @@
 
 <%@include file="Header.jsp"%>
 
+<!-- ##################################### STARTING OF CAROUSEL ########################################## -->
 
+
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1"></li>
+			<li data-target="#myCarousel" data-slide-to="2"></li>
+			
+		</ol>
+	
+
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner" role="listbox">
+		<div class="item active">
+				<img src="<s:url value="static/img/slide3.jpg" />" alt="Slide2" id="tales"
+					class="img-responsive">
+			</div>
+		
+			<div class="item ">
+			
+			
+				<img src="<s:url value="static/img/slide4.gif" />" alt="Slide1" id="tales"
+					class="img-responsive">
+			</div>
+
+			<div class="item">
+				<img src="<s:url value="static/img/slide1.jpg" />" alt="Slide2" id="tales"
+					class="img-responsive">
+			</div>
+			
+			
+			<div class="item">
+				<img src="<s:url value="static/img/slide2.jpg" />" alt="Slide3" id="tales"
+					class="img-responsive">
+			</div>
+
+			
+		</div>
+
+		<!-- Left and right controls -->
+		<a class="left carousel-control" href="#myCarousel" role="button"
+			data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"
+			aria-hidden="true"></span> <span class="sr-only">Previous</span>
+		</a> <a class="right carousel-control" href="#myCarousel" role="button"
+			data-slide="next"> <span
+			class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
+	
+	<!-- #####################3 ADDING THUMBNAILS ###################### -->
+	
+	<div class="container">
+<div class="row">
+<div class="col-sm-3" >
+     <a href="<c:url value='view/Solitaire' />"> <img src="<s:url value="/static/img/sol.jpg" />"  alt="Slide3" id="tales"
+				class="img-responsive"></a>
+    </div>
+    <div class="col-sm-3">
+      <a href="<c:url value='view/Necklace' />"> <img src="<s:url value="/static/img/pic1.jpg" />"  alt="Slide3" id="tales"
+				class="img-responsive"></a>
+    </div>
+    <div class="col-sm-3">
+      <a href="<c:url value='view/Ring' />"> <img src="<s:url value="/static/img/pic7.jpg" />"  alt="Slide3" id="tales"
+				class="img-responsive"></a>
+    </div>
+    <div class="col-sm-3">
+   <a href="<c:url value='view/Tops' />"> <img src="<s:url value="/static/img/pic8.jpg" />"  alt="Slide3" id="tales"
+				class="img-responsive"></a> 
+    </div>
+</div>
+	</div>
 
 </body>
 </html>

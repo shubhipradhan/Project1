@@ -3,7 +3,7 @@
 var cartapp=angular
                  .module("addToCartApp",[]);
                  
-cart.controller("addToCartCtrl",function($scope,$http){
+cartapp.controller("addToCartCtrl",function($scope,$http){
                 	 
 	$scope.retrieveCart=function(cartId){
 		$scope.cartId=cartId;
@@ -21,7 +21,7 @@ cart.controller("addToCartCtrl",function($scope,$http){
 	};
 	
 	$scope.refreshCartItem=function(){
-		$http.get('http://localhost:8080/AkiraFRONTEND/'+$scope.cartId).success(function(data){
+		$http.get('http://localhost:8081/AkiraF/'+$scope.cartId).success(function(data){
 		$scope.cart=data;	
 
 	});

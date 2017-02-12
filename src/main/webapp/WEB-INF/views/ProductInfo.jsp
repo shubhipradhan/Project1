@@ -37,12 +37,12 @@
 
 <!-- Custom Styling -->
 <!-- Bootstrap -->
-<link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 <div class="col-xs-6 floating-box">
 <img src="<s:url value="/static/img/s113.jpg" />" />
-<img src="<c:url value='/static/images/${product.productId}.jpg' />" class="img-responsive" alt="Picture"  />
+
 </div>
 <div class="col-xs-6 floating-box" >
 <%-- ${product} --%>

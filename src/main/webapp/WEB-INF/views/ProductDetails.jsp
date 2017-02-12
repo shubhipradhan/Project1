@@ -10,14 +10,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title><link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-	crossorigin="anonymous">
+<title>ProductDetails</title>
+
 <link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-	crossorigin="anonymous">
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
 
 <!-- jQuery library -->
 <script
@@ -25,9 +23,7 @@
 
 <!-- Latest compiled JavaScript -->
 <script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-	crossorigin="anonymous"></script>
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <!-- FontAwesome CDN -->
 <link rel="stylesheet"
@@ -51,8 +47,8 @@
 				<br>
 <h3>Products List</h3>
 <c:if test="${!empty listProducts}">
-	<table class="table table-hover">
-	<tr class="info">
+	<table class="table table-hover table-striped">
+	<tr class="success">
 		<th width="80">Product ID</th>
 		<th width="120">Product Name</th>
 		<th width="120">Product Brand</th>
@@ -63,7 +59,7 @@
 		
 	</tr>
 	<c:forEach items="${listProducts}" var="product">
-		<tr class="success">
+		<tr class="warning">
 			<td>${product.productId}</td>
 			<td>${product.productName}</td>
 			<td>${product.brand}</td>
